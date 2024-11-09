@@ -22,7 +22,7 @@ function preencherCamposDeTexto (tag, texto) {
 }
 
 function preencherTelaInicial () {
-preencherCamposDeTexto ('h1', 'Descubra o Número Secreto');
+preencherCamposDeTexto ('h1', 'Qual é o Número?');
 preencherCamposDeTexto ('p', `Digite um número de 1 a ${limiteNumeroAleatorio}.`);
 }
 
@@ -31,12 +31,12 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
     if (chute == numeroSecreto) {
         preencherCamposDeTexto ('h1', 'Acertou!! :D');
-        preencherCamposDeTexto ('p', `Você descobriu o número secreto com ${tentativas} tentativas!`);
+        preencherCamposDeTexto ('p', `Você descobriu o número com ${tentativas} tentativas!`);
         document.getElementById('chutar').setAttribute('disabled', true);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else{
             preencherCamposDeTexto ('h1', 'Tente novamente.');
-            preencherCamposDeTexto ('p', `O número secreto é ${chute > numeroSecreto? 'menor' : 'maior'}.`);
+            preencherCamposDeTexto ('p', `O número é ${chute > numeroSecreto? 'menor' : 'maior'}.`);
             limparCampo();
         }
         console.log(tentativas + 'ª tentativa: ' + chute);
